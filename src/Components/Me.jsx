@@ -7,22 +7,33 @@ const Me = () => {
     //const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const fetchUserData = async () => {
-            let result = await fetch(`${process.env.REACT_APP_API_HOST}/user/me`, {
-                method: 'GET',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
-                }
-            });
-    
-            result = await result.json()
-            console.log(JSON.stringify(result));
+    //console.log(`Bearer ${token}`);
 
+    useEffect(() => {
+        async function fetchUserData () {
+
+            try {
+                let result = await fetch(`${process.env.REACT_APP_API_HOST}/user/me`, {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+        
+                const data = await result.json();
+                console.log(data);
+                //setUserData(data);
+                //console.log(userData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+            
         };
 
-        fetchUserData();
+         if (token) {
+             fetchUserData();
+         }
     }, [token, navigate]);
 
     return (

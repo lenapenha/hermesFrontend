@@ -21,9 +21,10 @@ const LoginForm = () => {
         });
 
         result = await result.json()
-        
-        localStorage.setItem("jwt", result.token)
-        navigate("/me", {replace:true});
+        if (result.token) {
+            localStorage.setItem("jwt", result.token)
+            navigate("/me", {replace:true});
+        }
     }
 
     return (
