@@ -83,3 +83,19 @@
     color: #0340e7;
     cursor: pointer;
 }
+
+.wrapper .error {
+    color: #490000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.wrapper .success-message {
+    color: #214900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
