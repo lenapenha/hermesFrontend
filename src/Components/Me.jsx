@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 
 const Me = () => {
     const token = localStorage.getItem("jwt");
-    //const [userData, setUserData] = useState(null);
-    const navigate = useNavigate();
-
-    //console.log(`Bearer ${token}`);
+    const [userData, setUserData] = useState(null);
 
     useEffect(() => {
         async function fetchUserData () {
@@ -20,27 +15,25 @@ const Me = () => {
                         "Authorization": `Bearer ${token}`
                     }
                 });
-        
                 const data = await result.json();
-                console.log(data);
-                //setUserData(data);
-                //console.log(userData);
+                setUserData(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-            
         };
 
          if (token) {
              fetchUserData();
          }
-    }, [token, navigate]);
+    }, []);
 
     return (
         <div>
             <h2>My Profile</h2>
-            <p>Name: </p>
-            <p>Email:</p>
+            { userData && 
+            <><p>Name: {userData.username} </p>
+            <p>Email:  {userData.email} </p></>
+            }
         </div>
     );
 }
