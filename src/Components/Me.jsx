@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './Me.css';
 
 const Me = () => {
     const token = localStorage.getItem("jwt");
@@ -28,7 +29,7 @@ const Me = () => {
     }, []);
 
     return (
-        <div>
+        <div className="profile-card">
             <h2>My Profile</h2>
             { userData && 
             <><p>Name: {userData.username} </p>

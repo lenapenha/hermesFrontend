@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './LoginForm.css'
+import './LoginForm.css';
 import { FaEnvelope, FaUser, FaLock } from 'react-icons/fa';
 
 const LoginForm = () => {
