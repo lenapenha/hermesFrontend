@@ -55,3 +55,47 @@
     color: #333;
     font-weight: 700;
 }
+
+.wrapper .submit-container {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    margin: auto;
+}
+
+.wrapper .submit {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 500px;
+    height: 59px;
+    font-size: 16px;
+}
+
+.wrapper .create-account {
+    padding-left: 62px;
+    margin-top: 27px;
+    color: #797979;
+    font-size: 16px;
+}
+
+.wrapper .create-account span {
+    color: #0340e7;
+    cursor: pointer;
+}
+
+.wrapper .error {
+    color: #490000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.wrapper .success-message {
+    color: #214900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
